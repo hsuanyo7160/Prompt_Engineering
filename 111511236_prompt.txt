@@ -1,0 +1,19 @@
+Prompt1
+"""
+There is a {subject.removeprefix("high_school_")} related question: {question} {options}
+Based on a internal reasoning process, select the most correct answer and output only the letter of that option (without punctuation at the end)
+"""
+
+Prompt2
+"""
+There is a {subject.removeprefix("high_school_")} related question: {question} {options}
+my answer is {ans}, carefully check whether this answer is correct and select the most correct answer
+Output only the letter of that option (without punctuation at the end)
+"""
+
+API: 
+Groq: deepseek-r1-distill-llama-70b
+
+Strategy:
+deepseek 內建 chain of thought, 所以沒有特別去提, 主要策略是使用兩次prompt，
+先得到第一個版本的答案，接著再問一次模型對於這個答案的看法，若有錯則去修改。
