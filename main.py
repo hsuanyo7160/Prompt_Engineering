@@ -25,7 +25,7 @@ Based on a internal reasoning process, select the most correct answer and output
 """
 
 # Read 
-df = pd.read_csv("/kaggle/input/gai-hw1/mmlu_submit.csv")
+df = pd.read_csv("mmlu_submit.csv")
 
 # Predict
 results = []
